@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MPL Philippines | Linktree</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #353b3d;
+            font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            -webkit-font-smoothing: antialiased;
+            padding: 1.25em;
+        }
+
+        .card {
+            background-color: #2a3336;
+            width: 100%;
+            max-width: 32.5em;
+            min-height: 90vh;
+            border-radius: 1.5em;
+            padding: 1.5em 1em 2.5em 1em;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            box-shadow: 0 1.25em 2.5em rgba(0, 0, 0, 0.2);
+        }
+
+        .top-bar {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 0.5em;
+            margin-bottom: 1.25em;
+        }
+
+        .top-action-btn {
+            width: 2.5em;
+            height: 2.5em;
+            background-color: rgba(255, 255, 255, 0.85);
+            border: none;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #000;
+            cursor: pointer;
+            transition: transform 0.15s ease;
+            overflow: hidden;
+        }
+
+        .top-action-btn:active {
+            transform: scale(0.95);
+        }
+
+        .profile-img {
+            width: 6em;
+            height: 6em;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1em;
+            border: 0.0625em solid rgba(255, 255, 255, 0.1);
+        }
+
+        .profile-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 0.375em;
+            line-height: 1.2;
+        }
+
+        .profile-subtitle {
+            font-size: 0.875rem;
+            font-weight: 500;
+            text-align: center;
+            margin-bottom: 2em;
+            line-height: 1.4;
+            padding: 0 1em;
+        }
+
+        .links-wrapper {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75em;
+            padding: 0 0.5em;
+        }
+
+        .link-btn {
+            background-color: #ffffff;
+            color: #000000;
+            border-radius: 0.5em;
+            min-height: 3.5em;
+            padding: 0.75em 2em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            position: relative;
+            transition: background-color 0.2s ease, transform 0.15s ease;
+        }
+
+        .link-btn:hover {
+            background-color: #f0f0f0;
+        }
+
+        .link-btn:active {
+            transform: scale(0.98);
+        }
+
+        .link-text {
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .dots-icon {
+            position: absolute;
+            right: 1em;
+            color: #666666;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .dots-icon img {
+            height: 1em;
+            width: auto;
+            opacity: 0.6;
+        }
+
+        .join-btn {
+            margin-top: 3em;
+            background-color: #ffffff;
+            color: #000000;
+            text-decoration: none;
+            padding: 0.875em 1.75em;
+            border-radius: 9999em;
+            font-size: 0.875rem;
+            font-weight: 700;
+            box-shadow: 0 0.25em 0.375em rgba(0, 0, 0, 0.1);
+            transition: transform 0.15s ease;
+        }
+
+        .join-btn:active {
+            transform: scale(0.98);
+        }
+
+        .footer {
+            margin-top: 2em;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 0.375em;
+            font-size: 0.625rem;
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .footer a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="card">
+        <div class="top-bar">
+            <button class="top-action-btn" aria-label="Linktree Menu">
+                <img src="https://simpleicons.org/icons/linktree.svg" alt="Linktree"
+                    style="width: 1.25em; height: 1.25em;">
+            </button>
+
+            <button class="top-action-btn" aria-label="Share">
+                <img src="https://preview.redd.it/where-can-i-find-the-share-option-button-in-ios-app-no-way-v0-jfxe8l6btb5a1.jpg?auto=webp&s=dc986fe33eb3fae6e8254073d112ddd91f3c3327"
+                    alt="Share" style="width: 2.25em; height: 2 .25em; mix-blend-mode: multiply;">
+            </button>
+        </div>
+
+        <img src="https://ugc.production.linktr.ee/rvG5XhCSb6XDjDrBkXqQ_nzvrDaY6r0aMbz4o?io=true&size=avatar-v3_0"
+            alt="MPL Philippines" class="profile-img">
+        <h1 class="profile-title">MPL Philippines 🇵🇭</h1>
+        <p class="profile-subtitle">The Home of MPL Philippines #BeLegendary #LakasNgPinas</p>
+
+        <div class="links-wrapper">
+            <a href="https://www.facebook.com/groups/officialmplphilippines" target="_blank" class="link-btn">
+                <span class="link-text">MPL-PH Official Community Group</span>
+                <div class="dots-icon">
+                    <img src="https://media.istockphoto.com/id/1410044937/id/vektor/menu-tiga-titik-vertikal-ikon-ui-glyph-hitam.jpg?s=170667a&w=0&k=20&c=Ej_irojDmPjLwDJwzOF7oqZEuWrrNLhwI9-u_1MgIBI="
+                        alt="Menu">
+                </div>
+            </a>
+
+            <a href="http://www.youtube.com/c/MPLPhilippines" target="_blank" class="link-btn">
+                <span class="link-text">YouTube</span>
+                <div class="dots-icon">
+                    <img src="https://media.istockphoto.com/id/1410044937/id/vektor/menu-tiga-titik-vertikal-ikon-ui-glyph-hitam.jpg?s=170667a&w=0&k=20&c=Ej_irojDmPjLwDJwzOF7oqZEuWrrNLhwI9-u_1MgIBI="
+                        alt="Menu">
+                </div>
+            </a>
+
+            <a href="http://www.instagram.com/mpl.ph" target="_blank" class="link-btn">
+                <span class="link-text">Instagram</span>
+                <div class="dots-icon">
+                    <img src="https://media.istockphoto.com/id/1410044937/id/vektor/menu-tiga-titik-vertikal-ikon-ui-glyph-hitam.jpg?s=170667a&w=0&k=20&c=Ej_irojDmPjLwDJwzOF7oqZEuWrrNLhwI9-u_1MgIBI="
+                        alt="Menu">
+                </div>
+            </a>
+
+            <a href="https://www.facebook.com/mplph.official" target="_blank" class="link-btn">
+                <span class="link-text">Facebook</span>
+                <div class="dots-icon">
+                    <img src="https://media.istockphoto.com/id/1410044937/id/vektor/menu-tiga-titik-vertikal-ikon-ui-glyph-hitam.jpg?s=170667a&w=0&k=20&c=Ej_irojDmPjLwDJwzOF7oqZEuWrrNLhwI9-u_1MgIBI="
+                        alt="Menu">
+                </div>
+            </a>
+
+            <a href="https://twitter.com/MplPhilippines/" target="_blank" class="link-btn">
+                <span class="link-text">Twitter</span>
+                <div class="dots-icon">
+                    <img src="https://media.istockphoto.com/id/1410044937/id/vektor/menu-tiga-titik-vertikal-ikon-ui-glyph-hitam.jpg?s=170667a&w=0&k=20&c=Ej_irojDmPjLwDJwzOF7oqZEuWrrNLhwI9-u_1MgIBI="
+                        alt="Menu">
+                </div>
+            </a>
+
+            <a href="https://www.tiktok.com/@mplph_official" target="_blank" class="link-btn">
+                <span class="link-text">TikTok</span>
+                <div class="dots-icon">
+                    <img src="https://media.istockphoto.com/id/1410044937/id/vektor/menu-tiga-titik-vertikal-ikon-ui-glyph-hitam.jpg?s=170667a&w=0&k=20&c=Ej_irojDmPjLwDJwzOF7oqZEuWrrNLhwI9-u_1MgIBI="
+                        alt="Menu">
+                </div>
+            </a>
+
+            <a href="https://ph-mpl.com/" target="_blank" class="link-btn">
+                <span class="link-text">MPL-PH Official Website</span>
+                <div class="dots-icon">
+                    <img src="https://media.istockphoto.com/id/1410044937/id/vektor/menu-tiga-titik-vertikal-ikon-ui-glyph-hitam.jpg?s=170667a&w=0&k=20&c=Ej_irojDmPjLwDJwzOF7oqZEuWrrNLhwI9-u_1MgIBI="
+                        alt="Menu">
+                </div>
+            </a>
+        </div>
+
+        <a href="#" class="join-btn">Bergabung dengan mplph di Linktree</a>
+
+        <div class="footer">
+            <a href="#">Cookie Preferences</a> <span>•</span>
+            <a href="#">Report</a> <span>•</span>
+            <a href="#">Privacy</a> <span>•</span>
+            <a href="#">Explore</a>
+        </div>
+    </div>
+
+</body>
+
+</html>
